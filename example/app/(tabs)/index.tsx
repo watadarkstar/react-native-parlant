@@ -1,8 +1,14 @@
 import { SafeAreaView, StyleSheet } from "react-native";
 
 import { useChat } from "react-native-parlant";
-import { GiftedChat, IMessage } from "react-native-gifted-chat";
+import {
+  GiftedChat,
+  IMessage,
+  Send,
+  SendProps,
+} from "react-native-gifted-chat";
 import { useCallback } from "react";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function HomeScreen() {
   const { messages, sendMessage, isTyping, isLoading } = useChat({
@@ -30,6 +36,21 @@ export default function HomeScreen() {
     [sendMessage]
   );
 
+  const renderSend = useCallback((props: SendProps<IMessage>) => {
+    return (
+      <Send
+        {...props}
+        containerStyle={{
+          justifyContent: "flex-end",
+          paddingHorizontal: 10,
+          marginBottom: 55,
+        }}
+      >
+        <MaterialIcons size={30} color="blue" name="send" />
+      </Send>
+    );
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <GiftedChat
@@ -42,6 +63,10 @@ export default function HomeScreen() {
           name: "You",
         }}
         alwaysShowSend
+        textInputProps={{
+          style: styles.textInput,
+        }}
+        renderSend={renderSend}
       />
     </SafeAreaView>
   );
@@ -51,5 +76,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+  },
+  textInput: {
+    flex: 1,
+    fontSize: 16,
+    lineHeight: 20,
+    marginHorizontal: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    marginBottom: 50,
   },
 });
