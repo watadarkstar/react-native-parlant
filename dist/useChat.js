@@ -1,4 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.append = exports.useChat = void 0;
+const react_1 = require("react");
 const defaultProps = {
     agentId: "",
     api: "http://localhost:8800",
@@ -26,22 +29,22 @@ const defaultProps = {
  *   - isTyping: Boolean indicating if the agent is typing.
  *   - sendMessage: Function to send a message to the agent.
  */
-export const useChat = ({ api, agentId, initialMessages, moderation, customerId, title, maxRetries, headers, aiAvatar, }) => {
+const useChat = ({ api, agentId, initialMessages, moderation, customerId, title, maxRetries, headers, aiAvatar, }) => {
     // Ensure defaults are used for undefined values
-    const _api = api ?? defaultProps.api;
-    const _agentId = agentId ?? defaultProps.agentId;
-    const _maxRetries = maxRetries ?? defaultProps.maxRetries;
-    const _moderation = moderation ?? defaultProps.moderation;
-    const _customerId = customerId ?? defaultProps.customerId;
-    const _title = title ?? defaultProps.title;
-    const _headers = headers ?? defaultProps.headers;
-    const _aiAvatar = aiAvatar ?? defaultProps.aiAvatar;
-    const retries = useRef(0); // Use a ref to keep track of retries for fetching messages
-    const minOffset = useRef(0); // Use a ref to keep track of the minimum offset for fetching messages
-    const [sessionId, setSessionId] = useState("");
-    const [messages, setMessages] = useState(initialMessages || []);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isTyping, setIsTyping] = useState(false);
+    const _api = api !== null && api !== void 0 ? api : defaultProps.api;
+    const _agentId = agentId !== null && agentId !== void 0 ? agentId : defaultProps.agentId;
+    const _maxRetries = maxRetries !== null && maxRetries !== void 0 ? maxRetries : defaultProps.maxRetries;
+    const _moderation = moderation !== null && moderation !== void 0 ? moderation : defaultProps.moderation;
+    const _customerId = customerId !== null && customerId !== void 0 ? customerId : defaultProps.customerId;
+    const _title = title !== null && title !== void 0 ? title : defaultProps.title;
+    const _headers = headers !== null && headers !== void 0 ? headers : defaultProps.headers;
+    const _aiAvatar = aiAvatar !== null && aiAvatar !== void 0 ? aiAvatar : defaultProps.aiAvatar;
+    const retries = (0, react_1.useRef)(0); // Use a ref to keep track of retries for fetching messages
+    const minOffset = (0, react_1.useRef)(0); // Use a ref to keep track of the minimum offset for fetching messages
+    const [sessionId, setSessionId] = (0, react_1.useState)("");
+    const [messages, setMessages] = (0, react_1.useState)(initialMessages || []);
+    const [isLoading, setIsLoading] = (0, react_1.useState)(false);
+    const [isTyping, setIsTyping] = (0, react_1.useState)(false);
     const createSession = async () => {
         const response = await fetch(`${_api}/sessions?allow_greeting=false`, {
             method: "POST",
@@ -92,7 +95,7 @@ export const useChat = ({ api, agentId, initialMessages, moderation, customerId,
         setIsLoading(false);
         return json;
     };
-    useEffect(() => {
+    (0, react_1.useEffect)(() => {
         const fetchMessages = async () => {
             if (!sessionId) {
                 // This is normal if the session has not been created yet
@@ -143,7 +146,7 @@ export const useChat = ({ api, agentId, initialMessages, moderation, customerId,
                         },
                     }));
                     if (newMessages.length > 0) {
-                        setMessages((previousMessages) => append(previousMessages, newMessages));
+                        setMessages((previousMessages) => (0, exports.append)(previousMessages, newMessages));
                     }
                     const lastEvent = data[data.length - 1];
                     if (lastEvent && lastEvent.data.status === "typing") {
@@ -167,6 +170,7 @@ export const useChat = ({ api, agentId, initialMessages, moderation, customerId,
         isTyping,
     };
 };
+exports.useChat = useChat;
 /**
  * Appends new messages to the current list of messages.
  *
@@ -176,11 +180,12 @@ export const useChat = ({ api, agentId, initialMessages, moderation, customerId,
  * @param {boolean} [inverted=true] - If true, new messages are prepended; if false, appended.
  * @returns {TMessage[]} The updated array of messages.
  */
-export const append = (currentMessages = [], messages, inverted = true) => {
+const append = (currentMessages = [], messages, inverted = true) => {
     if (!Array.isArray(messages))
         messages = [messages];
     return inverted
         ? messages.concat(currentMessages)
         : currentMessages.concat(messages);
 };
+exports.append = append;
 //# sourceMappingURL=useChat.js.map
