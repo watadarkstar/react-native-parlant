@@ -29,19 +29,23 @@ npm install react-native-parlant
 ## Quick Start
 
 ```tsx
-import React from "react";
+import React, { useState } from "react";
 import { useChat } from "react-native-parlant";
 
 function ChatComponent() {
+  const [inputText, setInputText] = useState("");
   const { messages, sendMessage, isLoading, isTyping } = useChat({
     agentId: "your-agent-id",
     api: "https://your-parlant-api.com",
     title: "Customer Support Chat",
   });
 
-  const handleSendMessage = async (text: string) => {
+  const handleSendMessage = async () => {
+    if (!inputText.trim() || isLoading) return;
+
     try {
-      await sendMessage(text);
+      await sendMessage(inputText);
+      setInputText(""); // Clear input after sending
     } catch (error) {
       console.error("Failed to send message:", error);
     }
@@ -57,7 +61,26 @@ function ChatComponent() {
         </div>
       ))}
       {isTyping && <div>Agent is typing...</div>}
-      {/* Your message input component */}
+
+      {/* Message input component */}
+      <div style={{ display: "flex", marginTop: "16px" }}>
+        <input
+          type="text"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+          placeholder="Type your message..."
+          disabled={isLoading}
+          style={{ flex: 1, marginRight: "8px", padding: "8px" }}
+        />
+        <button
+          onClick={handleSendMessage}
+          disabled={isLoading || !inputText.trim()}
+          style={{ padding: "8px 16px" }}
+        >
+          {isLoading ? "Sending..." : "Send"}
+        </button>
+      </div>
     </div>
   );
 }
