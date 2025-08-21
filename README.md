@@ -20,6 +20,11 @@ applications.
   </a>
 </p>
 
+<p align="center">
+  <a href="https://snack.expo.dev/@flyreel/react-native-parlant-example" target="_blank">Snack playground</a>
+  <img height="18" src="https://snack.expo.io/favicon.ico" />
+</p>
+
 ## Installation
 
 Yarn:
