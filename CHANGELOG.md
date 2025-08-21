@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0](https://github.com/watadarkstar/react-native-parlant/compare/0.1.1...0.2.0) (2025-08-21)
+
+### Features
+
+* make text more clear in example ([518b145](https://github.com/watadarkstar/react-native-parlant/commit/518b1458b5d23f22ae233a74a98f111aeb8b5f25))
+
 ## [0.1.1](https://github.com/watadarkstar/react-native-parlant/compare/0.1.0...0.1.1) (2025-08-21)
 
 ## [0.1.0](https://github.com/watadarkstar/react-native-parlant/compare/0.0.6...0.1.0) (2025-08-21)
