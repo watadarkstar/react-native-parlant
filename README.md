@@ -36,7 +36,6 @@ function ChatComponent() {
   const { messages, sendMessage, isLoading, isTyping } = useChat({
     agentId: "your-agent-id",
     api: "https://your-parlant-api.com",
-    customerId: "user-123",
     title: "Customer Support Chat",
   });
 
