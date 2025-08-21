@@ -10,7 +10,7 @@ applications.
 
 <p align="center">
   <a href="https://www.npmjs.com/package/react-native-parlant">
-    <img alt="npm version" src="https://badge.fury.io/js/react-native-parlant.svg"/>
+    <img alt="npm version" src="https://badge.fury.io/js/react-native-parlant.svg?icon=si%3Anpm"/>
   </a>
   <a title='License' href="https://github.com/watadarkstar/react-native-parlant/blob/master/LICENSE" height="18">
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
