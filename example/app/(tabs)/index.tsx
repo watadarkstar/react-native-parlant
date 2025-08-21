@@ -17,7 +17,9 @@ export default function HomeScreen() {
     initialMessages: [
       {
         _id: 1,
-        text: "Hello! I'm here to help you with any question about cars. What would you like to discuss?",
+        text: `Hello! Make sure to run a Parlant agent server on http://localhost:8800 before sending any messages or this chat won't work. 
+        See Parlant docs on how to run an agent server: https://www.parlant.io/docs/quickstart/installation 
+        What would you like to discuss?`,
         createdAt: new Date(),
         user: {
           _id: 2,
