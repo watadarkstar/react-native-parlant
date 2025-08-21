@@ -18,8 +18,8 @@ export default function HomeScreen() {
       {
         _id: 1,
         text: `Hello! Make sure to run a Parlant agent server on http://localhost:8800 before sending any messages or this chat won't work. 
-        See Parlant docs on how to run an agent server: https://www.parlant.io/docs/quickstart/installation 
-        What would you like to discuss?`,
+\nSee Parlant docs on how to run an agent server: https://www.parlant.io/docs/quickstart/installation 
+\nWhat would you like to discuss?`,
         createdAt: new Date(),
         user: {
           _id: 2,
