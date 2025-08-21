@@ -1,6 +1,6 @@
 # React Native Parlant
 
-A React Native library for integrating [Parlant AI](https://www.parlant.io) agents into your React Native, Expo, and React applications.
+A React Native library for integrating <a href="https://www.parlant.io" target="_blank">Parlant AI</a> agents into your React Native, Expo, and React applications.
 
 ## Installation
 
@@ -232,7 +232,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
-For questions and support, please visit [Parlant Documentation](https://www.parlant.io/docs) or open an issue on GitHub.
+For questions and support, please visit [icookandcode](https://x.com/icookandcode) or open an issue on GitHub.
 
 ---
 
