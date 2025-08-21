@@ -1,0 +1,12 @@
+# Changelog
+
+## [0.1.0](https://github.com/watadarkstar/react-native-parlant/compare/0.0.6...0.1.0) (2025-08-21)
+
+### Features
+
+* add release-it script and upgrade package ([ac9c67b](https://github.com/watadarkstar/react-native-parlant/commit/ac9c67b3e38f0d831e972b271498a49ded7875c1))
+
+### Bug Fixes
+
+* example ([5579a7c](https://github.com/watadarkstar/react-native-parlant/commit/5579a7ce6d56c402e714b08e5338ad15c7f66ccd))
+* example styles ([39dd0eb](https://github.com/watadarkstar/react-native-parlant/commit/39dd0ebc882d3c32dc575754c2e2ba7e29c3d73d))
