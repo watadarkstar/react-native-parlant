@@ -294,7 +294,19 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
-For questions and support, please visit [icookandcode](https://x.com/icookandcode) or open an issue on GitHub.
+For questions and support, please contact [Adrian](https://x.com/icookandcode) on X or open an issue on GitHub.
+
+---
+
+<div align="center">
+
+**Ready to build AI agents that actually work?**
+
+⭐ **Star this repo** • 💬 **[Contact Adrian to Build It](https://x.com/icookandcode)**
+
+_Built with ❤️ by [Adrian](https://x.com/icookandcode)_
+
+</div>
 
 ---
 
