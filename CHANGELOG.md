@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.2.1](https://github.com/watadarkstar/react-native-parlant/compare/0.2.0...0.2.1) (2025-08-21)
+
 ## [0.2.0](https://github.com/watadarkstar/react-native-parlant/compare/0.1.1...0.2.0) (2025-08-21)
 
 ### Features
