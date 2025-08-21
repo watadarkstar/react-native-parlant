@@ -22,8 +22,22 @@ applications.
 
 ## Installation
 
+Yarn:
+
 ```bash
-npm install react-native-parlant
+yarn add react-native-parlant
+```
+
+Npm:
+
+```bash
+npm install --save react-native-parlant
+```
+
+Expo
+
+```bash
+npx expo install react-native-parlant
 ```
 
 ## Quick Start
