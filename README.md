@@ -23,6 +23,9 @@ applications.
 <p align="center">
   <a href="https://snack.expo.dev/@flyreel/react-native-parlant-example" target="_blank">Snack playground</a>
   <img height="18" src="https://snack.expo.io/favicon.ico" />
+  <br />
+  <a href="https://x.com/icookandcode" target="_blank">Need help building your agent? Connect with Adrian on X 🚀 
+</a>
 </p>
 
 ## Installation
