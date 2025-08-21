@@ -1,0 +1,44 @@
+{
+  "name": "react-native-parlant",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watadarkstar/react-native-parlant.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it",
+    "release:dry": "release-it --dry-run"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "reactjs",
+    "reactnative",
+    "parlant",
+    "agent",
+    "chat"
+  ],
+  "author": "Adrian Carolli",
+  "license": "MIT",
+  "description": "A React Native library for integrating Parlant AI agents into your React Native / Expo / React applications.",
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "react": "19.0.0",
+    "@types/react": "19.0.14",
+    "release-it": "^17.8.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
