@@ -32,10 +32,11 @@
   "license": "MIT",
   "description": "A React Native library for integrating Parlant AI agents into your React Native / Expo / React applications.",
   "devDependencies": {
-    "typescript": "^5.9.2",
-    "react": "19.0.0",
+    "@release-it/conventional-changelog": "^10.0.1",
     "@types/react": "19.0.14",
-    "release-it": "^17.8.2"
+    "react": "19.0.0",
+    "release-it": "19.0.4",
+    "typescript": "5.9.2"
   },
   "peerDependencies": {
     "react": "*"
