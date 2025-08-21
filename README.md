@@ -15,7 +15,7 @@ applications.
   <a title='License' href="https://github.com/watadarkstar/react-native-parlant/blob/master/LICENSE" height="18">
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
   </a>
-  <a title='Tweet' href="https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20React%20Native%20typing%20animation%20made%20with%20simple%20trigonometry&url=https://github.com/watadarkstar/react-native-parlant&via=icookandcode&hashtags=react,reactnative,opensource,github,ux" height="18">
+  <a title='Tweet' href="https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20React%20Native%20Parlant%20repository&url=https://github.com/watadarkstar/react-native-parlant&via=icookandcode&hashtags=react,reactnative,opensource,github,ai,parlant" height="18">
     <img src='https://img.shields.io/twitter/url/http/shields.io.svg?style=social' />
   </a>
 </p>
