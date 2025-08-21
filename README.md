@@ -51,61 +51,52 @@ npx expo install react-native-parlant
 ## Quick Start
 
 ```tsx
-import React, { useState } from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { useChat } from "react-native-parlant";
+import { GiftedChat, IMessage } from "react-native-gifted-chat";
 
-function ChatComponent() {
-  const [inputText, setInputText] = useState("");
-  const { messages, sendMessage, isLoading, isTyping } = useChat({
-    agentId: "your-agent-id",
-    api: "https://your-parlant-api.com",
-    title: "Customer Support Chat",
+export default function Example() {
+  const { messages, sendMessage, isTyping, isLoading } = useChat({
+    agentId: "agent-id",
+    api: "http://localhost:8800",
   });
-
-  const handleSendMessage = async () => {
-    if (!inputText.trim() || isLoading) return;
-
-    try {
-      await sendMessage(inputText);
-      setInputText(""); // Clear input after sending
-    } catch (error) {
-      console.error("Failed to send message:", error);
-    }
+  const onSend = (messages: IMessage[]) => {
+    const userMessage = messages[0]?.text || "";
+    sendMessage(userMessage);
   };
 
   return (
-    <div>
-      {/* Render your chat UI here */}
-      {messages.map((message) => (
-        <div key={message._id}>
-          <strong>{message.user.name}: </strong>
-          {message.text}
-        </div>
-      ))}
-      {isTyping && <div>Agent is typing...</div>}
-
-      {/* Message input component */}
-      <div style={{ display: "flex", marginTop: "16px" }}>
-        <input
-          type="text"
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-          placeholder="Type your message..."
-          disabled={isLoading}
-          style={{ flex: 1, marginRight: "8px", padding: "8px" }}
-        />
-        <button
-          onClick={handleSendMessage}
-          disabled={isLoading || !inputText.trim()}
-          style={{ padding: "8px 16px" }}
-        >
-          {isLoading ? "Sending..." : "Send"}
-        </button>
-      </div>
-    </div>
+    <SafeAreaView style={styles.container}>
+      <GiftedChat
+        messages={messages}
+        placeholder="Start typing..."
+        onSend={onSend}
+        isTyping={isTyping || isLoading}
+        user={{
+          _id: 1,
+          name: "You",
+        }}
+        alwaysShowSend
+        textInputProps={{
+          style: styles.textInput,
+        }}
+      />
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+  textInput: {
+    flex: 1,
+    marginHorizontal: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+  },
+});
 ```
 
 ## API Reference
