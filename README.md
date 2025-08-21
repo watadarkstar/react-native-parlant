@@ -1,0 +1,239 @@
+# React Native Parlant
+
+A React Native library for integrating [Parlant AI](https://www.parlant.io) agents into your React Native, Expo, and React applications.
+
+## Installation
+
+```bash
+npm install react-native-parlant
+```
+
+## Quick Start
+
+```tsx
+import React from "react";
+import { useChat } from "react-native-parlant";
+
+function ChatComponent() {
+  const { messages, sendMessage, isLoading, isTyping } = useChat({
+    agentId: "your-agent-id",
+    api: "https://your-parlant-api.com",
+    customerId: "user-123",
+    title: "Customer Support Chat",
+  });
+
+  const handleSendMessage = async (text: string) => {
+    try {
+      await sendMessage(text);
+    } catch (error) {
+      console.error("Failed to send message:", error);
+    }
+  };
+
+  return (
+    <div>
+      {/* Render your chat UI here */}
+      {messages.map((message) => (
+        <div key={message._id}>
+          <strong>{message.user.name}: </strong>
+          {message.text}
+        </div>
+      ))}
+      {isTyping && <div>Agent is typing...</div>}
+      {/* Your message input component */}
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### `useChat(props: Props)`
+
+The main hook for managing chat sessions with Parlant AI agents.
+
+#### Props
+
+| Prop              | Type                     | Required | Default                 | Description                           |
+| ----------------- | ------------------------ | -------- | ----------------------- | ------------------------------------- |
+| `agentId`         | `string`                 | ✅       | -                       | The ID of the Parlant AI agent        |
+| `api`             | `string`                 | ✅       | `http://localhost:8800` | The Parlant API endpoint              |
+| `initialMessages` | `IMessage[]`             | ❌       | `[]`                    | Initial messages to populate the chat |
+| `moderation`      | `string`                 | ❌       | `"auto"`                | Moderation setting for messages       |
+| `customerId`      | `string`                 | ❌       | `"guest"`               | Unique identifier for the customer    |
+| `title`           | `string`                 | ❌       | `"New Conversation"`    | Title for the chat session            |
+| `maxRetries`      | `number`                 | ❌       | `3`                     | Maximum retries for message fetching  |
+| `headers`         | `Record<string, string>` | ❌       | `{}`                    | Custom headers for API requests       |
+| `aiAvatar`        | `string`                 | ❌       | `""`                    | Avatar URL for AI agent messages      |
+
+#### Returns
+
+| Property      | Type                                         | Description                           |
+| ------------- | -------------------------------------------- | ------------------------------------- |
+| `messages`    | `IMessage[]`                                 | Array of chat messages                |
+| `sendMessage` | `(message: string) => Promise<MessageEvent>` | Function to send a message            |
+| `isLoading`   | `boolean`                                    | Whether a message is being sent       |
+| `isTyping`    | `boolean`                                    | Whether the agent is currently typing |
+
+### `append(currentMessages, newMessages, inverted?)`
+
+Utility function for appending messages to the chat.
+
+#### Parameters
+
+- `currentMessages` (`TMessage[]`) - Existing messages array
+- `newMessages` (`TMessage[]`) - New messages to append
+- `inverted` (`boolean`, default: `true`) - Whether to prepend (true) or append (false) messages
+
+## Types
+
+### `IMessage`
+
+```typescript
+interface IMessage {
+  _id: string | number;
+  text: string;
+  createdAt: Date | number;
+  user: {
+    _id: string | number;
+    name?: string;
+    avatar?: string | number | renderFunction;
+  };
+  image?: string;
+  video?: string;
+  audio?: string;
+  system?: boolean;
+  sent?: boolean;
+  received?: boolean;
+  pending?: boolean;
+  quickReplies?: QuickReplies;
+}
+```
+
+### `MessageEvent`
+
+```typescript
+interface MessageEvent {
+  id: string;
+  source: string;
+  kind: "message" | "status";
+  offset: number;
+  creation_utc: string;
+  correlation_id: string;
+  data: {
+    message: string;
+    participant: {
+      id: string;
+      display_name: string;
+    };
+    flagged: boolean;
+    tags: string[];
+    status?: "typing" | "ready";
+  };
+  deleted: boolean;
+}
+```
+
+### `Session`
+
+```typescript
+interface Session {
+  id: string;
+  agent_id: string;
+  customer_id: string;
+  creation_utc: string;
+  title: string;
+  mode: string;
+  consumption_offsets: {
+    client: number;
+  };
+}
+```
+
+## Features
+
+- 🤖 **Real-time AI Chat** - Connect to Parlant AI agents with real-time messaging
+- 📱 **Cross-Platform** - Works with React Native, Expo, and React applications
+- 🔄 **Auto-Reconnection** - Automatic retry logic for robust connections
+- 🎯 **TypeScript Support** - Full TypeScript definitions included
+- 💾 **Session Management** - Automatic session creation and management
+- 🔒 **Content Moderation** - Built-in support for message moderation
+- ⚡ **Long Polling** - Efficient real-time message fetching
+- 🎨 **Customizable** - Flexible message and user interface customization
+
+## Advanced Usage
+
+### Custom Headers
+
+```tsx
+const { messages, sendMessage } = useChat({
+  agentId: "your-agent-id",
+  api: "https://your-api.com",
+  headers: {
+    Authorization: "Bearer your-token",
+    "X-Custom-Header": "custom-value",
+  },
+});
+```
+
+### Initial Messages
+
+```tsx
+const initialMessages: IMessage[] = [
+  {
+    _id: 1,
+    text: "Hello! How can I help you today?",
+    createdAt: new Date(),
+    user: {
+      _id: 2,
+      name: "AI Assistant",
+      avatar: "https://example.com/avatar.png",
+    },
+  },
+];
+
+const { messages, sendMessage } = useChat({
+  agentId: "your-agent-id",
+  api: "https://your-api.com",
+  initialMessages,
+});
+```
+
+### Error Handling
+
+```tsx
+const handleSendMessage = async (text: string) => {
+  try {
+    await sendMessage(text);
+  } catch (error) {
+    if (error.message === "Failed to send message") {
+      // Handle send failure
+      console.error("Message failed to send");
+    } else if (error.message === "Failed to create session") {
+      // Handle session creation failure
+      console.error("Could not establish chat session");
+    }
+  }
+};
+```
+
+## Requirements
+
+- React 16.8+ (for hooks support)
+- TypeScript 4.0+ (optional but recommended)
+
+## License
+
+MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Support
+
+For questions and support, please visit [Parlant Documentation](https://www.parlant.io/docs) or open an issue on GitHub.
+
+---
+
+**Keywords:** react-native, react, parlant, ai, agent, chat, conversation, typescript
