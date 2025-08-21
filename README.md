@@ -4,7 +4,7 @@
 
 <p align="center">
 A React Native library for integrating <a href="https://www.parlant.io"
-target="_blank">Parlant AI</a> agents into your React Native, Expo, and React
+target="_blank">Parlant AI</a> agents<br />into your React Native, Expo, and React
 applications.
 </p>
 
