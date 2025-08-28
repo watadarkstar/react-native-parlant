@@ -5,3 +5,7 @@ android
 .cursor
 .env
 parlant.log
+
+# Parlant generated files
+runtime-data
+parlant-data
