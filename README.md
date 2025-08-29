@@ -301,4 +301,4 @@ _Built with ❤️ by [Adrian](https://x.com/icookandcode)_
 
 ---
 
-**Keywords:** react-native, react, parlant, ai, agent, chat, conversation, typescript
+**Keywords:** react-native, react, parlant, ai, agent, chat, conversation, typescript, react-native-parlant
