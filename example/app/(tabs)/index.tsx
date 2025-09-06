@@ -12,7 +12,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function HomeScreen() {
   const { messages, sendMessage, isTyping, isLoading } = useChat({
-    agentId: "QkXnTNNG5E",
+    agentId: "nIVoH2JQli",
     api: "http://localhost:8800",
     initialMessages: [
       {
