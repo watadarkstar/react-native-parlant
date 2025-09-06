@@ -13,7 +13,7 @@ applications.
    • 
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7369036507208183808/" target="_blank">👀 Watch a demo</a> 
   <br />
-  <a href="https://x.com/icookandcode" target="_blank">Need help building your agent? Connect with Adrian on X 🚀 
+  <a href="https://x.com/icookandcode" target="_blank">🚀 Need help building your agent? Connect with Adrian on X 
 </a>
 </p>
 
