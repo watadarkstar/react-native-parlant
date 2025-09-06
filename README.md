@@ -9,6 +9,15 @@ applications.
 </p>
 
 <p align="center">
+  <a href="https://snack.expo.dev/@flyreel/react-native-parlant-example" target="_blank">🕹️ Snack playground</a>
+   • 
+  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7369036507208183808/" target="_blank">👀 Watch a demo</a> 
+  <br />
+  <a href="https://x.com/icookandcode" target="_blank">Need help building your agent? Connect with Adrian on X 🚀 
+</a>
+</p>
+
+<p align="center">
   <a href="https://www.npmjs.com/package/react-native-parlant">
     <img alt="npm version" src="https://badge.fury.io/js/react-native-parlant.svg?icon=si%3Anpm"/>
   </a>
@@ -18,15 +27,6 @@ applications.
   <a title='Tweet' href="https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20React%20Native%20Parlant%20repository&url=https://github.com/watadarkstar/react-native-parlant&via=icookandcode&hashtags=react,reactnative,opensource,github,ai,parlant" height="18">
     <img src='https://img.shields.io/twitter/url/http/shields.io.svg?style=social' />
   </a>
-</p>
-
-<p align="center">
-  <a href="https://snack.expo.dev/@flyreel/react-native-parlant-example" target="_blank">🕹️ Snack playground</a>
-   • 
-  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7369036507208183808/" target="_blank">👀 Watch a demo</a> 
-  <br />
-  <a href="https://x.com/icookandcode" target="_blank">Need help building your agent? Connect with Adrian on X 🚀 
-</a>
 </p>
 
 ## Installation
