@@ -21,7 +21,7 @@ applications.
 </p>
 
 <p align="center">
-  <a href="https://snack.expo.dev/@flyreel/react-native-parlant-example" target="_blank"><img height="18" src="https://snack.expo.io/favicon.ico" /> Snack playground</a>
+  <a href="https://snack.expo.dev/@flyreel/react-native-parlant-example" target="_blank">🕹️ Snack playground</a>
    • 
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7369036507208183808/" target="_blank">👀 Watch a demo</a> 
   <br />
