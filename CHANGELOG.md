@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0](https://github.com/watadarkstar/react-native-parlant/compare/0.2.3...0.3.0) (2025-09-06)
+
+### Features
+
+* example agent ([9e622c7](https://github.com/watadarkstar/react-native-parlant/commit/9e622c76d7fcc5511a11acf3fc9514a41c61ef65))
+
 ## [0.2.3](https://github.com/watadarkstar/react-native-parlant/compare/0.2.2...0.2.3) (2025-08-21)
 
 ## [0.2.2](https://github.com/watadarkstar/react-native-parlant/compare/0.2.1...0.2.2) (2025-08-21)
